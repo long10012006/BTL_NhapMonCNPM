@@ -1,0 +1,9 @@
+D:\SanLich_WebForms_VS2026_Fix_ViewState_V2\SanLich\SanLichWeb\bin\SanLichWeb.dll.config
+D:\SanLich_WebForms_VS2026_Fix_ViewState_V2\SanLich\SanLichWeb\bin\SanLichWeb.dll
+D:\SanLich_WebForms_VS2026_Fix_ViewState_V2\SanLich\SanLichWeb\bin\SanLichWeb.pdb
+D:\SanLich_WebForms_VS2026_Fix_ViewState_V2\SanLich\SanLichWeb\bin\System.Data.SQLite.dll
+D:\SanLich_WebForms_VS2026_Fix_ViewState_V2\SanLich\SanLichWeb\obj\Debug\SanLichWeb.csproj.AssemblyReference.cache
+D:\SanLich_WebForms_VS2026_Fix_ViewState_V2\SanLich\SanLichWeb\obj\Debug\SanLichWeb.csproj.CoreCompileInputs.cache
+D:\SanLich_WebForms_VS2026_Fix_ViewState_V2\SanLich\SanLichWeb\obj\Debug\SanLichWeb.csproj.Up2Date
+D:\SanLich_WebForms_VS2026_Fix_ViewState_V2\SanLich\SanLichWeb\obj\Debug\SanLichWeb.dll
+D:\SanLich_WebForms_VS2026_Fix_ViewState_V2\SanLich\SanLichWeb\obj\Debug\SanLichWeb.pdb
