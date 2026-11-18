@@ -1,0 +1,128 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition="'$(Configuration)'==''">Debug</Configuration>
+    <Platform Condition="'$(Platform)'==''">AnyCPU</Platform>
+    <ProjectGuid>{99782EA1-A7AC-4230-BF63-C2851F828B82}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>SanLichWeb</RootNamespace>
+    <AssemblyName>SanLichWeb</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <LangVersion>7.3</LangVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress>true</Use64BitIISExpress>
+    <IISExpressSSLPort>44391</IISExpressSSLPort>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <OutputPath>bin\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)'=='Debug'">
+    <DebugSymbols>true</DebugSymbols><DebugType>full</DebugType><Optimize>false</Optimize><DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)'=='Release'">
+    <DebugType>pdbonly</DebugType><Optimize>true</Optimize><DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" /><Reference Include="System.Core" /><Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" /><Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" /><Reference Include="System.Configuration" />
+    <Reference Include="System.Xml" /><Reference Include="System.Xml.Linq" /><Reference Include="System.Drawing" />
+    <Reference Include="System.Data.SQLite"><HintPath>lib\System.Data.SQLite.dll</HintPath><Private>True</Private></Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\Schema.sql" />
+    <Content Include="App_Data\DatLichSan.db" />
+    <Compile Include="BLL\DatSanBLL.cs" />
+    <Compile Include="BLL\QuanLyBLL.cs" />
+    <Compile Include="BLL\SanBLL.cs" />
+    <Compile Include="BLL\ThongKeBLL.cs" />
+    <Compile Include="BLL\TaiKhoanBLL.cs" />
+    <Compile Include="DAL\DatSanDAL.cs" />
+    <Compile Include="DAL\Database.cs" />
+    <Compile Include="DAL\KhoiTaoDuLieu.cs" />
+    <Compile Include="DAL\NhatKyDAL.cs" />
+    <Compile Include="DAL\SanDAL.cs" />
+    <Compile Include="DAL\TaiKhoanDAL.cs" />
+    <Content Include="DangNhapThanhCong.aspx" />
+    <Compile Include="DangNhapThanhCong.aspx.cs"><DependentUpon>DangNhapThanhCong.aspx</DependentUpon></Compile>
+    <Content Include="Default.aspx" />
+    <Compile Include="Default.aspx.cs"><DependentUpon>Default.aspx</DependentUpon></Compile>
+    <Content Include="Global.asax" />
+    <Compile Include="Global.asax.cs"><DependentUpon>Global.asax</DependentUpon></Compile>
+    <Compile Include="Helpers\MatKhau.cs" />
+    <Compile Include="Helpers\BaoVeBieuMau.cs" />
+    <Compile Include="Helpers\QuyTac.cs" />
+    <Compile Include="Helpers\TrangCoSo.cs" />
+    <Content Include="Loi.html" />
+    <Compile Include="Models\LichSan.cs" />
+    <Compile Include="Models\NguoiDung.cs" />
+    <Compile Include="Models\SanView.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="Web.config" />
+    <Content Include="lib\LICENSE.System.Data.SQLite.txt" />
+    <Content Include="lib\System.Data.SQLite.dll" />
+    <Content Include="lib\x64\SQLite.Interop.dll" />
+    <Content Include="lib\x86\SQLite.Interop.dll" />
+    <Content Include="pages\DangKy\DangKy.aspx" />
+    <Compile Include="pages\DangKy\DangKy.aspx.cs"><DependentUpon>DangKy.aspx</DependentUpon></Compile>
+    <Compile Include="pages\DangKy\DangKy.aspx.designer.cs"><DependentUpon>DangKy.aspx</DependentUpon></Compile>
+    <Content Include="pages\DangNhap\DangNhap.aspx" />
+    <Compile Include="pages\DangNhap\DangNhap.aspx.cs"><DependentUpon>DangNhap.aspx</DependentUpon></Compile>
+    <Compile Include="pages\DangNhap\DangNhap.aspx.designer.cs"><DependentUpon>DangNhap.aspx</DependentUpon></Compile>
+    <Content Include="pages\LichCuaToi\LichCuaToi.aspx" />
+    <Compile Include="pages\LichCuaToi\LichCuaToi.aspx.cs"><DependentUpon>LichCuaToi.aspx</DependentUpon></Compile>
+    <Compile Include="pages\LichCuaToi\LichCuaToi.aspx.designer.cs"><DependentUpon>LichCuaToi.aspx</DependentUpon></Compile>
+    <Content Include="pages\NhatKy\NhatKy.aspx" />
+    <Compile Include="pages\NhatKy\NhatKy.aspx.cs"><DependentUpon>NhatKy.aspx</DependentUpon></Compile>
+    <Compile Include="pages\NhatKy\NhatKy.aspx.designer.cs"><DependentUpon>NhatKy.aspx</DependentUpon></Compile>
+    <Content Include="pages\QLDatSan\QLDatSan.aspx" />
+    <Compile Include="pages\QLDatSan\QLDatSan.aspx.cs"><DependentUpon>QLDatSan.aspx</DependentUpon></Compile>
+    <Compile Include="pages\QLDatSan\QLDatSan.aspx.designer.cs"><DependentUpon>QLDatSan.aspx</DependentUpon></Compile>
+    <Content Include="pages\QLGia\QLGia.aspx" />
+    <Compile Include="pages\QLGia\QLGia.aspx.cs"><DependentUpon>QLGia.aspx</DependentUpon></Compile>
+    <Compile Include="pages\QLGia\QLGia.aspx.designer.cs"><DependentUpon>QLGia.aspx</DependentUpon></Compile>
+    <Content Include="pages\QLLich\QLLich.aspx" />
+    <Compile Include="pages\QLLich\QLLich.aspx.cs"><DependentUpon>QLLich.aspx</DependentUpon></Compile>
+    <Compile Include="pages\QLLich\QLLich.aspx.designer.cs"><DependentUpon>QLLich.aspx</DependentUpon></Compile>
+    <Content Include="pages\QLSan\QLSan.aspx" />
+    <Compile Include="pages\QLSan\QLSan.aspx.cs"><DependentUpon>QLSan.aspx</DependentUpon></Compile>
+    <Compile Include="pages\QLSan\QLSan.aspx.designer.cs"><DependentUpon>QLSan.aspx</DependentUpon></Compile>
+    <Content Include="pages\ScriptChung.js" />
+    <Content Include="pages\ThongKe\ThongKe.aspx" />
+    <Compile Include="pages\ThongKe\ThongKe.aspx.cs"><DependentUpon>ThongKe.aspx</DependentUpon></Compile>
+    <Compile Include="pages\ThongKe\ThongKe.aspx.designer.cs"><DependentUpon>ThongKe.aspx</DependentUpon></Compile>
+    <Content Include="pages\TrangChu\TrangChu.aspx" />
+    <Compile Include="pages\TrangChu\TrangChu.aspx.cs"><DependentUpon>TrangChu.aspx</DependentUpon></Compile>
+    <Compile Include="pages\TrangChu\TrangChu.aspx.designer.cs"><DependentUpon>TrangChu.aspx</DependentUpon></Compile>
+    <Content Include="pages\XacNhan\XacNhan.aspx" />
+    <Compile Include="pages\XacNhan\XacNhan.aspx.cs"><DependentUpon>XacNhan.aspx</DependentUpon></Compile>
+    <Compile Include="pages\XacNhan\XacNhan.aspx.designer.cs"><DependentUpon>XacNhan.aspx</DependentUpon></Compile>
+    <Content Include="pages\master\Site.Master" />
+    <Compile Include="pages\master\Site.Master.cs"><DependentUpon>Site.Master</DependentUpon></Compile>
+    <Compile Include="pages\master\Site.Master.designer.cs"><DependentUpon>Site.Master</DependentUpon></Compile>
+    <Content Include="pages\style_Chung.css" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)'==''">18.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)'==''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="Exists('$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets')" />
+  <Target Name="CopySQLiteNative" AfterTargets="Build">
+    <MakeDir Directories="$(OutputPath)x86;$(OutputPath)x64" />
+    <Copy SourceFiles="lib\x86\SQLite.Interop.dll" DestinationFolder="$(OutputPath)x86" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="lib\x64\SQLite.Interop.dll" DestinationFolder="$(OutputPath)x64" SkipUnchangedFiles="true" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS><AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>51911</DevelopmentServerPort><DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44391/</IISUrl><NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer><SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
