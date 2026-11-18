@@ -1,0 +1,7 @@
+.vs/
+**/bin/
+**/obj/
+*.user
+*.suo
+**/App_Data/*.db-wal
+**/App_Data/*.db-shm
