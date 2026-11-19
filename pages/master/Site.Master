@@ -1,0 +1,73 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="SanLichWeb.pages.master.Site" %>
+<!DOCTYPE html>
+<html lang="vi">
+    <head runat="server">
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>
+            Sân Lịch
+        </title>
+        <link rel="stylesheet" href="<%= ResolveUrl("~/pages/style_Chung.css") %>" />
+        <asp:ContentPlaceHolder ID="head" runat="server" />
+    </head>
+    <body>
+        <form id="form1" runat="server">
+            <div class="app">
+                <aside class="sidebar">
+                    <div class="brand">
+                        <div class="brand-mark">
+                            SL
+                        </div>
+                        <div class="brand-name">
+                            SÂN LỊCH
+                            <span class="brand-sub">
+                                ĐẶT LỊCH SÂN THỂ THAO
+                            </span>
+                        </div>
+                    </div>
+                    <div class="nav-label">
+                        Một địa điểm · Nhiều sân
+                    </div>
+                    <nav class="nav" aria-label="Điều hướng chính">
+                        <asp:HyperLink runat="server" NavigateUrl="~/pages/TrangChu/TrangChu.aspx" Text="◷  Đặt sân và xem giá" />
+                        <asp:HyperLink ID="lnkLich" runat="server" NavigateUrl="~/pages/LichCuaToi/LichCuaToi.aspx" Text="▤  Lịch của tôi" />
+                        <asp:PlaceHolder ID="phQuanLy" runat="server">
+                            <asp:HyperLink runat="server" NavigateUrl="~/pages/QLSan/QLSan.aspx" Text="Quản lý sân" />
+                            <asp:HyperLink runat="server" NavigateUrl="~/pages/QLGia/QLGia.aspx" Text="Bảng giá" />
+                            <asp:HyperLink runat="server" NavigateUrl="~/pages/QLLich/QLLich.aspx" Text="Mở / khóa lịch" />
+                            <asp:HyperLink runat="server" NavigateUrl="~/pages/QLDatSan/QLDatSan.aspx" Text="Quản lý lượt đặt" />
+                            <asp:HyperLink runat="server" NavigateUrl="~/pages/ThongKe/ThongKe.aspx" Text="Thống kê" />
+                            <asp:HyperLink runat="server" NavigateUrl="~/pages/NhatKy/NhatKy.aspx" Text="Nhật ký hệ thống" />
+                        </asp:PlaceHolder>
+                    </nav>
+                    <div class="sidebar-bottom">
+                        <asp:HyperLink ID="lnkDangNhap" runat="server" NavigateUrl="~/pages/DangNhap/DangNhap.aspx" Text="Đăng nhập / Đăng ký" CssClass="logout-btn" />
+                        <asp:LinkButton ID="btnDangXuat" runat="server" Text="↪ Đăng xuất" CssClass="logout-btn" OnClick="btnDangXuat_Click" CausesValidation="false" />
+                    </div>
+                </aside>
+                <main>
+                    <header class="topbar">
+                        <div class="crumb">
+                            Hệ thống đặt lịch sân thể thao
+                        </div>
+                        <div class="top-actions">
+                            <span class="demo-badge">
+                                DỮ LIỆU BÀI MẪU
+                            </span>
+                            <asp:Label ID="lblNguoiDung" runat="server" />
+                        </div>
+                    </header>
+                    <asp:Label ID="lblBieuMauCu" runat="server" CssClass="message" Visible="false" role="status" />
+            <asp:ContentPlaceHolder ID="MainHolder" runat="server" />
+                    <footer>
+                        Giờ Việt Nam (UTC+7) · Sân bóng đá mini · Liên hệ mẫu: 0900 000 001
+                        <br />
+                        Địa điểm minh họa tại Hà Nội; thay thông tin thực tế trước khi triển khai.
+                    </footer>
+                </main>
+            </div>
+        </form>
+        <script src="<%= ResolveUrl("~/pages/ScriptChung.js") %>">
+        </script>
+    </body>
+</html>
